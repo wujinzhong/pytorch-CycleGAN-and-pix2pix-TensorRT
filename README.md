@@ -75,3 +75,6 @@ Check source code test_6_cvcuda_for_data_preprocessing_and_another_cuda_stream_f
 
 ## Optimizing document
 I summary details in this document, did some performance analysis. finally the performance speed up to baseline is 2.6X.
+![image](https://github.com/wujinzhong/pytorch-CycleGAN-and-pix2pix-TensorRT/assets/52945455/f59dc273-356f-490c-abb4-ddd2471c6147)
+![image](https://github.com/wujinzhong/pytorch-CycleGAN-and-pix2pix-TensorRT/assets/52945455/c6f19b0c-af32-4dfe-88fd-860c8cc0a5c6)
+
