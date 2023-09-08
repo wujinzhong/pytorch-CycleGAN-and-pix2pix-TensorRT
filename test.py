@@ -478,7 +478,7 @@ def main():
 
                             fifo_tensors.push( fake_B, torchutil.torch_stream )
 
-                    if False:
+                    if True:
                         #with NVTXUtil(f"save", "red", mm), SynchronizeUtil(save_stream):
                         with NVTXUtil(f"save", "red", mm), torch.cuda.stream(save_stream):
                             visuals = model.get_current_visuals()  # get image results

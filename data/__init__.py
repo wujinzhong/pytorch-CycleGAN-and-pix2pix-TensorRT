@@ -90,8 +90,8 @@ class CustomDatasetDataLoader():
     
     def __getitem__(self, index, mean_tensor, stddev_tensor, cvcuda_stream=None):
         print(f"self.dataset: {self.dataset}")
-        return self.dataset.__getitem__(index)
-        #return self.dataset.__getitem_cvcuda__(index, mean_tensor, stddev_tensor, cvcuda_stream)
+        #return self.dataset.__getitem__(index)
+        return self.dataset.__getitem_cvcuda__(index, mean_tensor, stddev_tensor, cvcuda_stream)
 
     def __iter__(self):
         """Return a batch of data"""
