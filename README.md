@@ -57,5 +57,21 @@ This is my system config scripts for reference to run my code:
 > 
 
 # Optimizing steps
-## baseline
-## 
+## Baseline
+Check source code test_0_baseline.py.
+Samilar to implementation in junyanz's repo, but I use my InferenceUtil.py for NVTX annoations in NSight System timeline, using explicitly CUDA streams in torch pipeline, monitoring GPU device memory usage between each stage in the E2E pipeline.
+
+While profiling/optimizing, I mainly use NSight System timeline to check which optimizing scheme is feasible. Actually, you should use CUDA event for accurate timing, but using NSight System is simpler, no source code invading, and do no harm to your optimizing dev.
+
+## CUDA multi-stream for inference stage and saving images to disk stage
+Check source code test_1_2_streams_for_inference_and_saving.py.
+
+## CUDA multi-stream for data loading
+Check source code test_3_multi_threads_and_cuda_stream_for_data_loading.py.
+I tried to use CPU multi-thread for parallel/higher data loading/image preprocessing, but sadly failed, check the description in my document at doc/ for detail.
+
+## CV-CUDA for image preprocessing in data loading stage
+Check source code test_6_cvcuda_for_data_preprocessing_and_another_cuda_stream_for_it_to_overlapping_with_inference.py.
+
+## Optimizing document
+I summary details in this document, did some performance analysis. finally the performance speed up to baseline is 2.6X.
